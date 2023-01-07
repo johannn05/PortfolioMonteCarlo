@@ -52,7 +52,7 @@ def get_choices():
     # Set Initial Investment
     investment = st.sidebar.number_input('Enter The Initial Investment', min_value=5000, max_value=25000, value=5000)
     # Set the investment forecast_years
-    forecast_years = st.sidebar.number_input('Enter The Forecast Years For The Simulation', min_value=5, max_value=15, value=5)
+    forecast_years = st.sidebar.number_input('Enter The Forecast Years For The Simulation', min_value=1, max_value=15, value=5)
     # Set the number of simulations to run_years
     sim_runs = st.sidebar.number_input('Enter The Number Of Simulations To Run (Recommended is 500 simulations, minimum 250 and maximum 1000', min_value=250, max_value=1000, value=250)
 
