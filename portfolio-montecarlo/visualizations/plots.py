@@ -126,7 +126,7 @@ def monte_carlo(mc_data_df, choices):
     ci_upper_cumulative_return = round(simulation_summary[9] * investment, 2)
 
     # Display the result of the calculations with descriptive text
-    st.write(f"There is a 95% chance that an initial investment of ${investment} over the next {forecast_years} years might fall within the range of {ci_lower_cumulative_return} and {ci_upper_cumulative_return} USD")
+    st.write(f"We are 95% confident that the value of an initial investment of ${investment} over the next {forecast_years} years will fall within the range of {ci_lower_cumulative_return} and {ci_upper_cumulative_return} USD.")
     st.dataframe(simulation_summary)
     
     st.write(f"The table above computes the statistics of the Monte Carlo simulation. Each value above can be treated the multiple of the original investment (CI Lower: = {round(simulation_summary[8],2)} x {investment} ={ci_lower_cumulative_return})")
