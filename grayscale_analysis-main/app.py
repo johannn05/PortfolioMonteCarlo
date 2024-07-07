@@ -17,9 +17,9 @@ def load_heading():
         Provides instructions to the user
     """
     with st.container():
-        st.title('Grayscale Analysis')
-        header = st.subheader('This App performs historical portfolio analysis and future analysis with Monte Carlo Simulation')
-        st.subheader('Please read the instructions carefully and enjoy!')
+        st.title('Monte Carlo Portfolio Simulation')
+        header = st.subheader('This application  performs historical portfolio analysis and future analysis utilizing Monte Carlo Simulation')
+        st.subheader('Customize the run configurations on the left and enjoy!')
         # st.text('This is some text.')
 
 
@@ -38,10 +38,10 @@ def get_choices():
     # ("Email", "Home phone", "Mobile phone")
     # )
     
-    warning_1 = st.sidebar.write("Max yrs you should go back is 5!")
-    years_back = st.sidebar.number_input('How Many Years Back From Today?', min_value=1, max_value=5, value=1)
+    warning_1 = st.sidebar.write("Maximum lookback period of 20 years")
+    years_back = st.sidebar.number_input('How Many Years Back From Today?', min_value=1, max_value=20, value=1)
 
-    warning_2 = st.sidebar.write("You must enter 1 Index such as SPY, 3 Stock, and 2 Crypto Symbol names. Please refer to Yahoo Finance for a list of applicable ticker symbols.  Type the symbol EXACTLY as provided by Yahoo Finance.")
+    warning_2 = st.sidebar.write("Please enter 1 index , 3 equities, and 2 cryptocurrencies. Please refer to Yahoo Finance for a list of applicable ticker symbols.")
         
     tickers = st.sidebar.text_input('Enter 1 index and 3 stock symbols.', 'SPY,AAPL,TSLA,NVDA')
 
@@ -49,13 +49,13 @@ def get_choices():
     # 'SPY,AMZN,TSLA,NVDA,AAPL,BTC-USD,ETH-USD'
 
     # Set the weights
-    weights_str = st.sidebar.text_input('Enter The Investment Weights - Total 1.0', '0.2,0.2 ,0.2,0.2,0.1,0.1')
+    weights_str = st.sidebar.text_input('Please enter the portfolio weights (Must add up to 1)', '0.2,0.2 ,0.2,0.2,0.1,0.1')
     # Set Initial Investment
-    investment = st.sidebar.number_input('Enter The Initial Investment - Max 15K', min_value=5000, max_value=15000, value=5000)
+    investment = st.sidebar.number_input('Enter your initial investment - Max $1B', min_value=5000, max_value=1000000000, value=5000)
     # Set the investment forecast_years
-    forecast_years = st.sidebar.number_input('Enter The Forecast Years For The Sim - Max 10', min_value=3, max_value=10, value=5)
+    forecast_years = st.sidebar.number_input('Enter The Forecast Years For The Sim - (Maximum 10 years)', min_value=3, max_value=10, value=5)
     # Set the number of simulations to run_years
-    st.sidebar.write("We recommend you run 500 sim runs. 250 is minimum and 1000 is max")
+    st.sidebar.write("Accuracy of results would improve with more simulations")
     sim_runs = st.sidebar.number_input('Enter The Number Of Sims To Run', min_value=250, max_value=1000, value=500)
 
     # Set the start_date to years_back  
