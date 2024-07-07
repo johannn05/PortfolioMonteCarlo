@@ -129,7 +129,7 @@ def monte_carlo(mc_data_df, choices):
     st.write(f"There is a 95% chance that an initial investment of ${investment} over the next {forecast_years} years might fall within the range of {ci_lower_cumulative_return} and {ci_upper_cumulative_return} USD")
     st.dataframe(simulation_summary)
     
-    st.write(f"The table above computes the statistics of the Monte Carlo simulation. Each value above can be treated the multiple of the original investment (CI Lower: = {simulation_summary[8]} x {investment} ={ci_lower_cumulative_return})")
+    st.write(f"The table above computes the statistics of the Monte Carlo simulation. Each value above can be treated the multiple of the original investment (CI Lower: = {round(simulation_summary[8],2)} x {investment} ={ci_lower_cumulative_return})")
 
     st.write(f"Disclaimer: This simulation provides a simplistic forecast of portfolio performance based solely on historical data from the specified lookback period. It is not a comprehensive financial analysis and should not be used as the sole basis for making investment decisions. ")
 
